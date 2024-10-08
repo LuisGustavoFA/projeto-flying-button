@@ -24,23 +24,43 @@ body {
     z-index: 99;
 }
 
-.score {
+.settings {
     position: fixed;
-    right: 10vw;
-    bottom: 5vh;
-    font-size: 6rem;
-    transition: .1s ease-in-out;
+    display: flex;
+    flex-direction: row;
 }
 
-.level {
-    position: fixed;
+.settings-level {
     display: flex;
     gap: 8px;
     background-color: white;
     margin: 8px;
     padding: 8px;
     border-radius: 8px;
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 600;
     cursor: pointer;
+}
+
+.settings-score-table {
+    display: flex;
+    gap: 8px;
+    background-color: white;
+    margin: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.score-h1, .max-score-h1 {
+    font-size: 1rem;
+    margin-bottom: 0;
+    transition: .1s ease-in-out;
+}
+
+.score, .max-score {
+    font-size: 2rem;
+    margin: 0;
+    transition: .1s ease-in-out;
 }

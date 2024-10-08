@@ -1,9 +1,11 @@
 const button = document.querySelector(".button");
 const score = document.querySelector(".score");
-const level = document.querySelector(".level");
+const maxScore = document.querySelector(".max-score");
+const level = document.querySelector(".settings-level");
 const levelNumber = document.querySelector(".level-number");
 levelNumber.innerHTML = 1;
 score.innerHTML = 0;
+maxScore.innerHTML = 0;
 let leftButtonPosition = 42;
 let topButtonPosition = 42;
 button.style.left = `${leftButtonPosition}vw`;
@@ -11,8 +13,13 @@ button.style.top = `${topButtonPosition}vh`;
 let levelMultiplier = 100;
 
 document.addEventListener("click", (e) => {
-    if (e.target.className == button.className) score.innerHTML++;
-    else score.innerHTML = 0;
+    if (e.target.className == button.className) {
+        score.innerHTML++;
+    }
+    else {
+        if (score.innerHTML > maxScore.innerHTML) maxScore.innerHTML = score.innerHTML;
+        score.innerHTML = 0;
+    }
 });
 
 setInterval(() => {
@@ -63,6 +70,4 @@ level.addEventListener("click", () => {
         levelNumber.innerHTML = 1;
         levelMultiplier = 100;
     }
-    console.log(levelMultiplier);
-    console.log(levelNumber.innerHTML);
 });
