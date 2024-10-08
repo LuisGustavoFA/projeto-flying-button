@@ -65,4 +65,4 @@ level.addEventListener("click", () => {
     }
     console.log(levelMultiplier);
     console.log(levelNumber.innerHTML);
-})
+});
